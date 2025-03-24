@@ -6,31 +6,43 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
+    overflow: hidden; /* Prevents accidental scrolling */
 }
 
 /* Container styles */
 .container {
     margin-top: 50px;
     position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* GIF styles */
 #gif {
     width: 150px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 /* Main question styles */
-h1 {
+#question {
     font-size: 24px;
     margin-bottom: 20px;
+}
+
+/* Button container */
+.button-container {
+    position: relative;
+    display: flex;
+    gap: 20px;
 }
 
 /* Button styles */
 button {
     padding: 15px 30px;
     font-size: 18px;
-    margin: 10px;
     cursor: pointer;
     border: none;
     outline: none;
@@ -42,36 +54,15 @@ button {
 .yes-button {
     background-color: #00ff00;
     color: black;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-.yes-button:hover {
-    background-color: #00cc00;
-}
-
-/* No button specific styles */
-.no-button {
-    background-color: #ff0000;
-    color: white;
-}
-
-.no-button:hover {
-    background-color: #cc0000;
-}
-
-/* Glowing effect for Yes button when clicked */
+/* Glowing effect for Yes button */
 .yes-glow {
     animation: glow 1s infinite alternate;
 }
 
-/* No button container styles */
-#no-buttons-container {
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* Animation for glowing effect */
 @keyframes glow {
     0% {
         box-shadow: 0 0 10px #00ff00;
@@ -79,4 +70,20 @@ button {
     100% {
         box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
     }
+}
+
+/* No button specific styles */
+.no-button {
+    background-color: #ff0000;
+    color: white;
+    font-weight: bold;
+}
+
+/* Container for "No" buttons */
+#no-buttons-container {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
 }
